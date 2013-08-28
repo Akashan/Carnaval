@@ -1,0 +1,7 @@
+parameters:
+#    carnaval_website.example.class: Carnaval\WebsiteBundle\Example
+
+services:
+#    carnaval_website.example:
+#        class: %carnaval_website.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

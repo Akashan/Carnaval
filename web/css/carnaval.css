@@ -1,0 +1,18 @@
+.alignLeft{
+	margin:5px;
+	float:left;
+}
+
+.alignRight{
+	margin:5px;
+	float:right;
+}
+.center { text-align: center;}
+.left { text-align: left;}
+.right { text-align: right;}
+.justify { text-align: justify;}
+.fleft { float: left;} /*-> similar to .pull-left already existing in bootstrap*/
+.fright { float: right;}  /*-> similar to .pull-right already existing in bootstrap*/
+.vab { vertical-align: bottom;}
+.bold { font-weight: bold;}
+.italic { font-style: italic;}

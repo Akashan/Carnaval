@@ -1,0 +1,4 @@
+carnaval_website:
+    resource: "@CarnavalWebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+

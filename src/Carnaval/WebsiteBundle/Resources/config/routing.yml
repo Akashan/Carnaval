@@ -1,0 +1,33 @@
+carnaval_website_accueil:
+    path:  /
+    defaults: { _controller: CarnavalWebsiteBundle:Website:index }	
+carnaval_website_presentation:
+    path:  /presentation
+    defaults: { _controller: CarnavalWebsiteBundle:Website:presentation }
+carnaval_website_references:
+    path:  /references
+    defaults: { _controller: CarnavalWebsiteBundle:Website:references }
+carnaval_website_catalogue:
+    path:  /catalogue
+    defaults: { _controller: CarnavalWebsiteBundle:Website:catalogue }
+carnaval_website_calendrier:
+    path:  /calendrier
+    defaults: { _controller: CarnavalWebsiteBundle:Website:calendrier }
+carnaval_website_galeries:
+    path:  /galeries
+    defaults: { _controller: CarnavalWebsiteBundle:Website:galeries }
+carnaval_website_voir_galeries:
+    path:  /galeries/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:voirGaleries }
+carnaval_website_videos:
+    path:  /videos
+    defaults: { _controller: CarnavalWebsiteBundle:Website:videos }
+carnaval_website_voir_videos:
+    path:  /videos/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:voirVideos }
+carnaval_website_contacts:
+    path:  /contacts
+    defaults: { _controller: CarnavalWebsiteBundle:Website:contacts }
+carnaval_website_liens:
+    path:  /liens
+    defaults: { _controller: CarnavalWebsiteBundle:Website:liens }

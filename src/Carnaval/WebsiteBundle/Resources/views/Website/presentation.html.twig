@@ -1,0 +1,70 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/presentation.html.twig #}
+ 
+{% extends "CarnavalWebsiteBundle::layout.html.twig" %}
+ 
+{% block title %}
+  Présentation - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+	<h2 class="text-center">CARNAVAL ARTIFICES EVENEMENTIELS SPECTACLES PYROTECHNIQUES</h2>
+	<div class="row">
+		<div class="span12 text-center">
+			<p">Spécialiste de <strong>spectacles</strong> <strong>pyrotechniques</strong> depuis plusieurs décennies en <strong>Normandie</strong> et dans l&#39;Oise, <strong>CARNAVAL</strong> et <strong>FESTIVAL</strong> se regroupent et deviennent : <strong>CARNAVAL ARTIFICES EVENEMENTIELS - SPECTACLES PYROTECHNIQUES</strong>.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span5 text-center">
+			<IMG src="{{ asset('img/jean_noel_douchet.png') }}" width="250px" style="border:1px solid black;" alt="Jean-Noël DOUCHET">
+		</div>
+		<div class="span5 offset2 text-center">
+			<IMG src="{{ asset('img/francois_xavier_douchet.png') }}" width="250px" style="border:1px solid black;" alt="François-Xavier DOUCHET">
+		</div>
+	</div>
+	<div class="row">
+		<div class="span5 text-center">
+			<p>Jean-Noël  DOUCHET (Gérant), artificier depuis le 14 Juillet 1989 au sein de la société <strong>CARNAVAL</strong></p>
+		</div>
+		<div class="span5 offset2 text-center">
+			<p>François-Xavier DOUCHET (Co-Gérant), artificier depuis 2004 au sein de la société <strong>CARNAVAL</strong>, mais passionné par la pyrotechnie depuis l&#39;âge de 10 ans.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			
+			<img src="{{ asset('img/pic_2.png') }}" width="200px" class="alignRight" alt="Picture 2">
+			
+			<p style="text-indent:20px; text-align:justify;">
+
+			Passionnés de <strong>feux d&#39;artifices</strong> depuis son enfance, Jean-Noël DOUCHET devient artificier à l&#39;occasion des <strong>feux d&#39;artifices</strong> du 14 Juillet 1989 pour le bicentenaire de la Révolution.
+
+			Depuis cette date, ce cinquantenaire aguerri, ayant transmis le virus <strong>pyrotechnique</strong> a ses fils, François-Xavier et Pierre-Antoine, a réalisé plus de 1000 <strong>spectacles pyrotechniques</strong>.
+
+			</p><br>
+
+			<p style="text-indent:20px; text-align:justify;">
+
+			En 2011, changement d&#39;orientation, après 22 années passées en tant que salarié saisonnier de la société <strong>CARNAVAL</strong>, Jean-Noël DOUCHET associé à son fils François-Xavier reprend les sociétés <strong>CARNAVAL</strong>  et <strong>FESTIVAL</strong> pour créer <strong>CARNAVAL ARTIFICES EVENEMENTIELS - SPECTACLES PYROTECHNIQUES</strong>
+
+			</p><br>                                      
+
+			<img src="{{ asset('img/pic_3.png') }}" width="200px" class="alignLeft" alt="Picture 3">
+
+			<p style="text-indent:20px; text-align:justify;">
+
+			Des <strong>spectacles</strong> adaptés aux petites communes comme aux plus grands <strong>évènements</strong>, <strong>CARNAVAL ARTIFICES EVENEMENTIELS</strong> est en mesure de répondre à vos besoins (fêtes patronales, fêtes nationales, anniversaire)  qu&#39;ils soient privés ou publics.
+
+			</p>                                             
+
+			<p style="text-indent:20px; text-align:justify;">
+
+			Fort d&#39;une structure répondant aux <strong>normes européennes</strong> concernant les <strong>artifices</strong>, l&#39;un des seuls sites de stockage classé de 2 tonnes de Matière Active en <strong>Normandie</strong> et pouvant s&#39;appuyer sur une équipe de près de  120 <strong>artificiers qualifiés</strong>, <strong>CARNAVAL ARTIFICES EVENEMENTIELS</strong> répondra à vos besoins. <a href="{{ path('carnaval_website_contacts') }}" >Contactez-nous</a>. 
+
+			</p>
+		</div>
+	</div>
+<br> 
+
+
+
+{% endblock %}
