@@ -1,0 +1,29 @@
+{# src/Sdz/UserBundle/Resources/views/Security/login.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block carnaval_contenu %}
+    {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+    {% if error %}
+        <div class="alert alert-error">{{ error.message }}</div>
+    {% endif %}
+
+    {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
+    <form class="form-horizontal well" action="{{ path('login_check') }}" method="post">
+        <fieldset>
+            <legend>Connexion au site</legend>
+            <label for="username">Login:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" />
+
+            <label for="remember_me" class="checkbox">
+                <input type="checkbox" id="remember_me" name="_remember_me" checked />
+                Restez connecté</label>
+
+            <input type="submit" name="Connexion" />
+        </fieldset>
+    </form>
+
+{% endblock %}
