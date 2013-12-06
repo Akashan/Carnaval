@@ -42,6 +42,11 @@ class Liens
      */
     private $isActive;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Carnaval\WebsiteBundle\Entity\CatagorieLiens")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
 
     /**
      * Get id
@@ -120,5 +125,28 @@ class Liens
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Carnaval\WebsiteBundle\Entity\CatagorieLiens $categorie
+     * @return Liens
+     */
+    public function setCategorie(\Carnaval\WebsiteBundle\Entity\CatagorieLiens $categorie)
+    {
+        $this->categorie = $categorie;
+    
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Carnaval\WebsiteBundle\Entity\CatagorieLiens
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

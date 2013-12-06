@@ -1,11 +1,30 @@
 {# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
  
 {% extends "::layout.html.twig" %}
- 
+
 {% block title %}
   Contacts - {{ parent() }}
 {% endblock %}
- 
+
 {% block carnaval_contenu %}
+
+    <h2 class="text-center">CONTACTS</h2>
+    <p>Pour nous contacter, vous pouvez nous contacter à l'adresse suivante :</p>   <br>
+    <p style="text-align:center"><strong>CARNAVAL ARTIFICES EVENEMENTIEL</strong><br>
+        195 Rue de Saint Antoine<br>
+        76570 Mesnil Panneville<br>
+        Téléphone 02-32-94-02-88<br>
+        Télécopie 02-32-94-02-88</p> <br>
+    <p>Vous pouvez également nous contacter en remplissant le formulaire ci-dessous</p>
+
+    <form class="form-horizontal well" id="formulaire" method="post" name={{ formName }} {{ form_enctype(form) }}>
+        <fieldset>
+            <legend style="color:#fff;">Votre message</legend>
+            {{ form_widget(form) }}
+            <br />
+            <input type="submit" class="btn btn-primary" />
+            <input name="cancel" class="btn" type="submit" value="Cancel" formnovalidate/>
+        </fieldset>
+    </form>
 
 {% endblock %}

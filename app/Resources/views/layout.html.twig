@@ -78,6 +78,13 @@
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span10 offset1">
+                    {% for key, flashMessages in app.session.flashbag.all() %}
+                        {% for message in flashMessages %}
+                            <div class="alert alert-{{ key }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
 					{% block carnaval_contenu %}
 					  
 					{% endblock %}
