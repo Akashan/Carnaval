@@ -34,8 +34,11 @@ class WebsiteController extends Controller
 
         $listEvents = $repository->getAllEventsFromDate(new \DateTime());
 
-        $startDate = $listEvents[0]->getEventDate()->modify('first day of this month');
-        $endDate = end($listEvents)->getEventDate()->modify('last day of this month')->modify('+1 day');
+        $firstEventDate = clone $listEvents[0]->getEventDate();
+        $lastEventDate = clone end($listEvents)->getEventDate();
+
+        $startDate = $firstEventDate->modify('first day of this month');
+        $endDate = $lastEventDate->modify('last day of this month')->modify('+1 day');
 
         $newListEvents = array();
 
@@ -52,16 +55,14 @@ class WebsiteController extends Controller
 
         foreach($newListEvents as $key => $value){
             $date = new \DateTime($key);
-            $date->modify('+1 month');
+            $nextDate = clone $date;
+            $nextDate->modify('+1 month');
             foreach($listEvents as $event){
-                echo $event->getEventDate()->format('Y-m-d');
-                echo "|";
-                echo $date->format('Y-m-d');
-                echo "<br>";
-                if($event->getEventDate() < $date){
+                if($event->getEventDate() < $nextDate && $event->getEventDate() > $date){
                     $newListEvents[$key][] = $event;
                 }
             }
+            $date->modify('+1 month');
         }
 
         return $this->render('CarnavalWebsiteBundle:Website:calendrier.html.twig', array('events' => $newListEvents));

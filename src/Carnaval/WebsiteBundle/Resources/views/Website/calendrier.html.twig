@@ -9,12 +9,16 @@
 {% block carnaval_contenu %}
     <h2 class="text-center">Evénements à venir</h2>
     {% for key,value in events %}
-        Au mois de {{ key }} {{ value|length }}
+        {% if value|length != 0 %}
+            <h4>Au mois de {{ key|date('F Y') }}</h4>
+        {% endif %}
         {% for event in value %}
             <span style="text-transform:uppercase; font-weight:bold">{{ event.lieu }}</span> - Le {{ event.eventDate|date('d/m/Y') }}<span></span>
             <p>{{ event.name }} :<br />{{ event.description }}</p>
             <hr />
         {% endfor %}
-        <br/>
+        {% if value|length != 0 %}
+            <br/>
+        {% endif %}
     {% endfor %}
 {% endblock %}
