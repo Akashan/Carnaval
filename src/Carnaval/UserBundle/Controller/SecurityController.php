@@ -12,7 +12,7 @@ class SecurityController extends Controller
     {
         // Si le visiteur est déjà identifié, on le redirige vers l'accueil
         if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-            return $this->redirect($this->generateUrl('dream_community_website_accueil'));
+            return $this->redirect($this->generateUrl('carnaval_website_accueil'));
         }
 
         $request = $this->getRequest();
@@ -26,7 +26,7 @@ class SecurityController extends Controller
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return $this->render('DreamCommunityUserBundle:Security:login.html.twig', array(
+        return $this->render('CarnavalUserBundle:Security:login.html.twig', array(
             // Valeur du précédent nom d'utilisateur entré par l'internaute
             'last_username' => $session->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,

@@ -26,6 +26,11 @@ class MessageType extends AbstractType
             ->add('message','textarea', array(
                 'attr' => array('cols' => '75', 'rows' => '5'),
             ))
+            ->add('security','text',array(
+                'attr'=>array('style'=>'visibility:hidden;'),
+                'label' => " ",
+                'required' => false
+            ))
         ;
 
         // On récupère la factory (usine)

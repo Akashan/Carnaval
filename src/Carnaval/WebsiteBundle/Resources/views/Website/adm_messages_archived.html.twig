@@ -1,0 +1,43 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - Messages Archivés - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Objet</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for message in messages %}
+            <tr>
+                <td>
+                    {% if message.isRead %}
+                        <img src="{{ asset('img/read.png') }}" width="25px" />
+                    {% else %}
+                        <img src="{{ asset('img/unread.png') }}" width="25px" />
+                    {% endif %}
+                </td>
+                <td>{{ message.lastName }} {{ message.firstName }}</td>
+                <td>{{ message.email }}</td>
+                <td>{{ message.objet }}</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-info" href="{{ path('carnaval_website_adm_messages_read', {'id': message.id, 'return':'archived'}) }}">Lire</a>
+                        <a class="btn btn-danger" href="{{ path('carnaval_website_adm_messages_delete', {'id': message.id, 'return':'archived'}) }}">Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

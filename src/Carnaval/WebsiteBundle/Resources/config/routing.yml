@@ -31,3 +31,61 @@ carnaval_website_contacts:
 carnaval_website_liens:
     path:  /liens
     defaults: { _controller: CarnavalWebsiteBundle:Website:liens }
+
+carnaval_website_adm_messages:
+    path:  /adm_messages
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessages }
+carnaval_website_adm_messages_archived:
+    path:  /adm_messages_archived
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesArchived }
+carnaval_website_adm_messages_garbage:
+    path:  /adm_messages_garbage
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesGarbage }
+carnaval_website_adm_messages_read:
+    path:  /adm_messages_read/{id}/{return}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesRead }
+
+carnaval_website_adm_messages_archive:
+    path:  /adm_messages_archive/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesArchive }
+carnaval_website_adm_messages_delete:
+    path:  /adm_messages_delete/{id}/{return}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesDelete }
+carnaval_website_adm_messages_real_delete:
+    path:  /adm_messages_real_delete/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admMessagesRealDelete }
+
+carnaval_website_adm_images:
+    path:  /adm_images
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admImages }
+
+carnaval_website_adm_videos:
+    path:  /adm_videos
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admVideos }
+
+carnaval_website_adm_liens:
+    path:  /adm_liens
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admLiens }
+carnaval_website_adm_categories:
+    path:  /adm_categories
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admCategories }
+
+carnaval_website_adm_lien_ajout:
+    path:  /adm_lien_ajout
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admLienAjout }
+carnaval_website_adm_lien_modifier:
+    path:  /adm_lien_modifier/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admLienModifier }
+carnaval_website_adm_lien_supprimer:
+    path:  /adm_lien_supprimer/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admLienSupprimer }
+
+carnaval_website_adm_categorie_ajout:
+    path:  /adm_categorie_ajout
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admCategorieAjout }
+carnaval_website_adm_categorie_modifier:
+    path:  /adm_categorie_modifier/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admCategorieModifier }
+carnaval_website_adm_categorie_supprimer:
+    path:  /adm_categorie_supprimer/{id}
+    defaults: { _controller: CarnavalWebsiteBundle:Website:admCategorieSupprimer }

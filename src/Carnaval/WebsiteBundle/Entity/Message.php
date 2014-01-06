@@ -45,7 +45,7 @@ class Message
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255, nullable=true)
      */
     private $telephone;
 
@@ -90,6 +90,11 @@ class Message
      * @ORM\Column(name="isDeleted", type="boolean")
      */
     private $isDeleted;
+
+    /**
+     * @var string
+     */
+    private $security;
 
 
     /**
@@ -331,4 +336,28 @@ class Message
     {
         return $this->isDeleted;
     }
+
+    /**
+     * Set security
+     *
+     * @param string $security
+     * @return Security
+     */
+    public function setSecurity($security)
+    {
+        $this->security = $security;
+
+        return $this;
+    }
+
+    /**
+     * Get security
+     *
+     * @return string
+     */
+    public function getSecurity()
+    {
+        return $this->security;
+    }
+
 }

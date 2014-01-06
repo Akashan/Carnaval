@@ -1,7 +1,7 @@
 parameters:
-#    dream_community_user.example.class: DreamCommunity\UserBundle\Example
+#    carnaval_user.example.class: Carnaval\UserBundle\Example
 
 services:
-#    dream_community_user.example:
-#        class: %dream_community_user.example.class%
+#    carnaval_user.example:
+#        class: %carnaval_user.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

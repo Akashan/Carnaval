@@ -2,13 +2,13 @@
 
 /*
  * Copyright 2013 Johannes M. Schmitt <schmittjoh@gmail.com>
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,6 +31,12 @@ abstract class BaseDriverTest extends \PHPUnit_Framework_TestCase
 
         $this->assertNotNull($m);
         $this->assertEquals('blog-post', $m->xmlRootName);
+
+        $p = new PropertyMetadata($m->name, 'id');
+        $p->type = array('name' => 'string', 'params' => array());
+        $p->groups = array("comments","post");
+        $p->xmlElementCData = false;
+        $this->assertEquals($p, $m->propertyMetadata['id']);
 
         $p = new PropertyMetadata($m->name, 'title');
         $p->type = array('name' => 'string', 'params' => array());
@@ -150,6 +156,14 @@ abstract class BaseDriverTest extends \PHPUnit_Framework_TestCase
         $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Node'));
 
         $this->assertEquals(2, $m->propertyMetadata['children']->maxDepth);
+    }
+
+    public function testPersonCData()
+    {
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Person'));
+
+        $this->assertNotNull($m);
+        $this->assertFalse($m->propertyMetadata['name']->xmlElementCData);
     }
 
     /**

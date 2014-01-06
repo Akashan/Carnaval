@@ -1,0 +1,19 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - Message - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+    <h3>Etes-vous certain de vouloir supprimer le message de {{ message.firstName }} {{ message.lastName }} ?</h3>
+    <h4>{{ message.objet }}</h4>
+    <p style="border:1px solid #ffffff; padding: 5px;">
+        {{ message.message }}
+    </p>
+    <form method="post">
+        <input type="submit" class="btn btn-primary" value="Supprimer" />
+        <input name="cancel" class="btn" type="submit" value="Annuler" formnovalidate/>
+    </form>
+{% endblock %}

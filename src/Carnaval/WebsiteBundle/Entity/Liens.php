@@ -24,6 +24,13 @@ class Liens
     /**
      * @var string
      *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="url", type="text")
      */
     private $url;
@@ -148,5 +155,28 @@ class Liens
     public function getCategorie()
     {
         return $this->categorie;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Liens
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

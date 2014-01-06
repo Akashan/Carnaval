@@ -28,6 +28,15 @@ class CatagorieLiens
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Carnaval\WebsiteBundle\Entity\Liens", mappedBy="liens")
+     */
+    private $liens;
+
+    public function __construct()
+    {
+        $this->liens = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -60,5 +69,45 @@ class CatagorieLiens
     public function getName()
     {
         return $this->name;
+    }
+
+
+    /**
+     * Add liens
+     *
+     * @param \Carnaval\WebsiteBundle\Entity\Liens $liens
+     * @return CatagorieLiens
+     */
+    public function addLien(\Carnaval\WebsiteBundle\Entity\Liens $liens)
+    {
+        $this->liens[] = $liens;
+    
+        return $this;
+    }
+
+    /**
+     * Remove liens
+     *
+     * @param \Carnaval\WebsiteBundle\Entity\Liens $liens
+     */
+    public function removeLien(\Carnaval\WebsiteBundle\Entity\Liens $liens)
+    {
+        $this->liens->removeElement($liens);
+    }
+
+    /**
+     * Get liens
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLiens()
+    {
+        return $this->liens;
+    }
+
+    public function setLiens($liens)
+    {
+        return $this->liens = $liens;
+        return $this;
     }
 }

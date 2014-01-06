@@ -12,4 +12,48 @@ use Doctrine\ORM\EntityRepository;
  */
 class MessageRepository extends EntityRepository
 {
+    public function getAllMessages()
+    {
+        // La construction de la requête reste inchangée
+        $query = $this->createQueryBuilder('a')
+            ->where('a.isDeleted = :isdel')
+            ->andWhere('a.isArchived = :isarchived')
+            ->setParameters(array(':isdel'=> false, ':isarchived'=> false))
+            ->orderBy('a.receiveDate', 'ASC')
+            ->getQuery();
+
+        // On récupère les résultats à partir de la Query
+        $resultats = $query->getResult();
+
+        return $resultats;
+    }
+    public function getAllMessagesArchived()
+    {
+        // La construction de la requête reste inchangée
+        $query = $this->createQueryBuilder('a')
+            ->where('a.isDeleted = :isdel')
+            ->andWhere('a.isArchived = :isarchived')
+            ->setParameters(array(':isdel'=> false, ':isarchived'=> true))
+            ->orderBy('a.receiveDate', 'ASC')
+            ->getQuery();
+
+        // On récupère les résultats à partir de la Query
+        $resultats = $query->getResult();
+
+        return $resultats;
+    }
+    public function getAllMessagesDeleted()
+    {
+        // La construction de la requête reste inchangée
+        $query = $this->createQueryBuilder('a')
+            ->where('a.isDeleted = :isdel')
+            ->setParameters(array(':isdel'=> true))
+            ->orderBy('a.receiveDate', 'ASC')
+            ->getQuery();
+
+        // On récupère les résultats à partir de la Query
+        $resultats = $query->getResult();
+
+        return $resultats;
+    }
 }

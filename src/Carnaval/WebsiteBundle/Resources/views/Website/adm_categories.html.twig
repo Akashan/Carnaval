@@ -1,0 +1,31 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - Catégories - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+    <table class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <th>Catégories</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.name }}</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-warning" href="{{ path('carnaval_website_adm_categorie_modifier', {'id': categorie.id}) }}">Modifier</a>
+                        <a class="btn btn-danger" href="{{ path('carnaval_website_adm_categorie_supprimer', {'id': categorie.id}) }}">Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

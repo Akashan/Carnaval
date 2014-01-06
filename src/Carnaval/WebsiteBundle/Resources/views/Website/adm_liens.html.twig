@@ -1,0 +1,33 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - Liens - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+    <table class="table table-bordered table-condensed">
+        {% for categorie in categories %}
+            <thead>
+                <tr>
+                    <th>{{ categorie.name }}</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lien in categorie.liens %}
+                    <tr>
+                        <td>{{ lien.name }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-warning" href="{{ path('carnaval_website_adm_lien_modifier', {'id': lien.id}) }}">Modifier</a>
+                                <a class="btn btn-danger" href="{{ path('carnaval_website_adm_lien_supprimer', {'id': lien.id}) }}">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

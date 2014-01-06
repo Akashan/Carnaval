@@ -1,0 +1,20 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  Admin - Ajout Lien - {{ parent() }}
+{% endblock %}
+
+{% block carnaval_contenu %}
+    <form class="form-horizontal well" id="formulaire" method="post" name={{ formName }} {{ form_enctype(form) }}>
+        <fieldset>
+            <legend style="color:#fff;">Ajouter un Lien</legend>
+            {{ form_widget(form) }}
+            <br />
+            <input type="submit" class="btn btn-primary" />
+            <input name="cancel" class="btn" type="submit" value="Cancel" formnovalidate/>
+        </fieldset>
+    </form>
+
+{% endblock %}

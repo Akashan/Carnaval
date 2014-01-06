@@ -1,7 +1,19 @@
 parameters:
-#    carnaval_website.example.class: Carnaval\WebsiteBundle\Example
-
+    user_bundle.handler.login_success_handler.class: Carnaval\UserBundle\Handler\LoginSuccessHandler
+    user_bundle.handler.logout_success_handler.class: Carnaval\UserBundle\Handler\LogoutSuccessHandler
+    
 services:
-#    carnaval_website.example:
-#        class: %carnaval_website.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    user_bundle.handler.login_success_handler:
+        class:  %user_bundle.handler.login_success_handler.class%
+        arguments:  [@router, @security.context]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' } 
+    user_bundle.handler.logout_success_handler:
+        class:  %user_bundle.handler.logout_success_handler.class%
+        arguments:  [@router]
+        calls:
+            - [ setContainer, [ @service_container ] ]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

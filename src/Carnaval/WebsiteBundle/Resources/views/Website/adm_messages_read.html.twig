@@ -1,0 +1,18 @@
+{# src/Carnaval/WebsiteBundle/Resources/views/Website/index.html.twig #}
+ 
+{% extends "::layout.html.twig" %}
+ 
+{% block title %}
+  Admin - Message - {{ parent() }}
+{% endblock %}
+ 
+{% block carnaval_contenu %}
+    <h3>Message de {{ message.firstName }} {{ message.lastName }}</h3>
+    <h4>{{ message.objet }}</h4>
+    <p style="border:1px solid #ffffff; padding: 5px;">
+        {{ message.message }}
+    </p>
+    <span style="text-decoration: underline">Email</span> : {{ message.email }}<br/>
+    <span style="text-decoration: underline">Téléphone</span> : {{ message.telephone }}<br/>
+    <a href="{{ returnUrl }}" class="btn btn-info">Retour</a>
+{% endblock %}

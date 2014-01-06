@@ -9,9 +9,9 @@
     {% endif %}
 
     {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-    <form class="form-horizontal well" action="{{ path('login_check') }}" method="post">
+    <form class="form-horizontal well" id="formulaire" action="{{ path('login_check') }}" method="post">
         <fieldset>
-            <legend>Connexion au site</legend>
+            <legend style="color:#fff;">Connexion au site</legend>
             <label for="username">Login:</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
@@ -22,7 +22,7 @@
                 <input type="checkbox" id="remember_me" name="_remember_me" checked />
                 Restez connecté</label>
 
-            <input type="submit" name="Connexion" />
+            <input type="submit" name="Connexion" class="btn btn-primary" />
         </fieldset>
     </form>
 

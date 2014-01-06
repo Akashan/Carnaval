@@ -7,5 +7,14 @@
 {% endblock %}
  
 {% block carnaval_contenu %}
-
+    {% for categorie in categories %}
+       {% if categorie.liens|length != 0 %}
+           <h4>{{ categorie.name }}</h4>
+           <ul>
+               {% for lien in categorie.liens %}
+                    <li><a href="{{ lien.url }}">{{ lien.name }}</a> : {{ lien.description }}</li>
+               {% endfor %}
+           </ul>
+       {% endif %}
+    {% endfor %}
 {% endblock %}

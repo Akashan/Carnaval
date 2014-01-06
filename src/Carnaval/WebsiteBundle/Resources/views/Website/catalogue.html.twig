@@ -7,28 +7,23 @@
 {% endblock %}
  
 {% block carnaval_contenu %}
-    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1410" height="768" id="FlashID" title="Lacroix-Ruggieri 2012">
-        <param name="movie" value="{{ asset('swf/CatalogueLRI2012-tournepages.swf') }}" />
-        <param name="quality" value="high" />
-        <param name="wmode" value="opaque" />
-        <param name="swfversion" value="6.0.65.0" />
-        <!-- Cette balise <param> invite les utilisateurs de Flash Player en version 6.0 r65 et ultérieure à télécharger la version la plus récente de Flash Player. Supprimez-la si vous ne voulez pas que cette invite soit visible. -->
-        <param name="expressinstall" value="Scripts/expressInstall.swf" />
-        <!-- La balise <object> suivante est destinée aux navigateurs autres qu'IE. Supprimez-la d'IE à l'aide d'IECC. -->
-        <!--[if !IE]>-->
-        <object type="application/x-shockwave-flash" data="{{ asset('swf/CatalogueLRI2012-tournepages.swf') }}" width="1410" height="768">
-            <!--<![endif]-->
-            <param name="quality" value="high" />
-            <param name="wmode" value="opaque" />
-            <param name="swfversion" value="6.0.65.0" />
-            <param name="expressinstall" value="Scripts/expressInstall.swf" />
-            <!-- Le navigateur affichera le contenu alternatif suivant pour les utilisateurs d'un lecteur Flash de version 6.0 ou de versions plus anciennes. -->
-            <div>
-                <h4>Le contenu de cette page nécessite une version plus récente d’Adobe Flash Player.</h4>
-                <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtenir le lecteur Adobe Flash" width="112" height="33" /></a></p>
+            <div class="accordion-group">
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item1" data-toggle="collapse"> Accordéon </a> </div>
+                <div id="item1" class="collapse">
+                    <div class="accordion-inner"> Ce plugin permet de créer des effets "accordéon" totalement paramétrables</div>
+                </div>
             </div>
-            <!--[if !IE]>-->
-        </object>
-        <!--<![endif]-->
-    </object>
+            <div class="accordion-group">
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item2" data-toggle="collapse"> Fenêtre modale </a> </div>
+                <div id="item2" class="collapse">
+                    <div class="accordion-inner"> Ce plugin permet de créer des fenêtres modales élégantes avec une grande simplicité. </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item3" data-toggle="collapse"> Carousel </a> </div>
+                <div id="item3" class="collapse">
+                    <div class="accordion-inner"> Ce plugin permet de faire défiler des images ou des vidéo,
+                        ou tout autre élément média avec une mise en forme esthétique </div>
+                </div>
+            </div>
 {% endblock %}

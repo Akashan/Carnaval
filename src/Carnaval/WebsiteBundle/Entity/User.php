@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Serializable;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\Role;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
