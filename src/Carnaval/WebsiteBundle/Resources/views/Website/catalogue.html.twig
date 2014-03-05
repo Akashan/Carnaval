@@ -3,27 +3,127 @@
 {% extends "::layout.html.twig" %}
  
 {% block title %}
-  Catalogue - {{ parent() }}
+Prêt à Tirer&reg; - {{ parent() }}
 {% endblock %}
  
 {% block carnaval_contenu %}
             <div class="accordion-group">
-                <div class="accordion-heading"> <a class="accordion-toggle" href="#item1" data-toggle="collapse"> Accordéon </a> </div>
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item1" data-toggle="collapse"> Présentation </a> </div>
                 <div id="item1" class="collapse">
-                    <div class="accordion-inner"> Ce plugin permet de créer des effets "accordéon" totalement paramétrables</div>
+                    <div class="accordion-inner">
+                        <img src="{{ asset('img/PresentationPaT.png') }}" alt="Présentation des Prêt à Tirer&reg;" />
+                    </div>
                 </div>
             </div>
             <div class="accordion-group">
-                <div class="accordion-heading"> <a class="accordion-toggle" href="#item2" data-toggle="collapse"> Fenêtre modale </a> </div>
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item2" data-toggle="collapse"> Galerie Photo </a> </div>
                 <div id="item2" class="collapse">
-                    <div class="accordion-inner"> Ce plugin permet de créer des fenêtres modales élégantes avec une grande simplicité. </div>
+                    <div class="accordion-inner">
+                        <img src="{{ asset('img/PAT-2mn.jpg') }}" alt="PaT 2 minutes" />
+                        <img src="{{ asset('img/PAT-3mn.jpg') }}" alt="PaT 3 minutes" />
+                        <img src="{{ asset('img/PAT-4mn.jpg') }}" alt="PaT 4 minutes" />
+                        <img src="{{ asset('img/Magiclight.jpg') }}" alt="Magiclight" />
+                        <img src="{{ asset('img/Midnight.jpg') }}" alt="Midnight" />
+                        <img src="{{ asset('img/Cyberlight.jpg') }}" alt="Cyberlight" />
+                        <img src="{{ asset('img/Starlight.jpg') }}" alt="Starlight" />
+                    </div>
                 </div>
             </div>
             <div class="accordion-group">
-                <div class="accordion-heading"> <a class="accordion-toggle" href="#item3" data-toggle="collapse"> Carousel </a> </div>
+                <div class="accordion-heading"> <a class="accordion-toggle" href="#item3" data-toggle="collapse"> Tarifs 2014 </a> </div>
                 <div id="item3" class="collapse">
-                    <div class="accordion-inner"> Ce plugin permet de faire défiler des images ou des vidéo,
-                        ou tout autre élément média avec une mise en forme esthétique </div>
+                    <div class="accordion-inner">
+                        <table align="center" style="border:1px solid white; border-collapse: collapse;">
+                            <tr>
+                                <td style="border:1px solid #ffffff; border-right:1px solid #000000;  padding:3px; text-align: center; color:#000000; background-color: #ffffff;">
+                                    Désignation
+                                </td>
+                                <td style="border-right:1px solid #000000; padding:3px; text-align: center; color:#000000; background-color: #ffffff;">
+                                    Durée
+                                </td>
+                                <td style="border:1px solid #ffffff; padding:3px; text-align: center; color:#000000; background-color: #ffffff;">
+                                    Prix
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Sunlight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    2min
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    125 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Sunlight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    3min
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    159 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Sunlight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    4min
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    199 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Magiclight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    6min
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    650 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Midnight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    6min30
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    840 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Cyberlight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    7min
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    990 &euro;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    Starlight
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    7min30
+                                </td>
+                                <td style="border:1px solid white; padding:3px; text-align: center;">
+                                    1355 &euro;
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
 {% endblock %}
